@@ -4,7 +4,10 @@ infrastructure:validate:
     name: registry.gitlab.com/gitlab-org/terraform-images/stable:latest
     entrypoint:
       - '/usr/bin/env'
-      - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}'
+      - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+      - 'AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}'
+      - 'AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}'
+      - 'AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}'
   variables:
     ASSET_NAME: infrastructure
   only:
@@ -25,7 +28,10 @@ infrastructure:plan:
     name: registry.gitlab.com/gitlab-org/terraform-images/stable:latest
     entrypoint:
       - '/usr/bin/env'
-      - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}'
+      - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+      - 'AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}'
+      - 'AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}'
+      - 'AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}'
   variables:
     ASSET_NAME: infrastructure
     INFR_FILE: vars/infr.tfvars.json
@@ -50,7 +56,10 @@ infrastructure:apply:
     name: registry.gitlab.com/gitlab-org/terraform-images/stable:latest
     entrypoint:
       - '/usr/bin/env'
-      - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}'
+      - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+      - 'AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}'
+      - 'AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}'
+      - 'AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}'
   when: manual
   variables:
     ASSET_NAME: infrastructure

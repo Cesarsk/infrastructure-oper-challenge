@@ -12,7 +12,7 @@ infrastructure:validate:
       - main
       - develop
     changes:
-      - ${ASSET_NAME}/**/*
+      - infrastructure/**/*
   before_script:
     - cd ${ASSET_NAME}
   script:
@@ -34,7 +34,7 @@ infrastructure:plan:
       - main
       - develop
     changes:
-      - ${ASSET_NAME}/**/*
+      - infrastructure/**/*
   before_script:
     - cd ${ASSET_NAME}
   script:
@@ -58,7 +58,7 @@ infrastructure:apply:
     refs:
       - main
     changes:
-      - ${ASSET_NAME}/**/*
+      - infrastructure/**/*
   before_script:
     - cd ${ASSET_NAME}
   script:

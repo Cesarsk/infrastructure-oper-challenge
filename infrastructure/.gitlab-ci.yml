@@ -1,7 +1,7 @@
 infrastructure:validate:
   stage: validate
   image:
-    name: terraform:latest
+    name: registry.gitlab.com/gitlab-org/terraform-images/stable:latest
     entrypoint:
       - '/usr/bin/env'
       - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
@@ -22,7 +22,7 @@ infrastructure:validate:
 infrastructure:plan:
   stage: plan
   image:
-    name: terraform:latest
+    name: registry.gitlab.com/gitlab-org/terraform-images/stable:latest
     entrypoint:
       - '/usr/bin/env'
       - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
@@ -47,7 +47,7 @@ infrastructure:plan:
 infrastructure:apply:
   stage: apply
   image:
-    name: terraform:latest
+    name: registry.gitlab.com/gitlab-org/terraform-images/stable:latest
     entrypoint:
       - '/usr/bin/env'
       - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'

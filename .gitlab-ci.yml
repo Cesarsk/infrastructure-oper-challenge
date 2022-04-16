@@ -1,0 +1,7 @@
+stages:
+  - inf:validate
+  - inf:plan
+  - inf:apply
+
+include:
+  - local: infrastructure/.gitlab-ci.yml

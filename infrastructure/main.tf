@@ -1,4 +1,3 @@
-/*
 module "s3" {
   source = "./modules/s3"
 
@@ -7,7 +6,6 @@ module "s3" {
 
   tags = var.tags
 }
-*/
 
 module "k8s_deployment" {
   source = "./modules/k8s/deployment"

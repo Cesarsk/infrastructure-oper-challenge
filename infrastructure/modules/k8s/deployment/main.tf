@@ -59,6 +59,15 @@ resource "kubernetes_deployment" "python-webserver" {
             name           = "containerport"
             container_port = 4545
           }
+          liveness_probe {
+            http_get {
+              path = "/api/health"
+              port = 4545
+            }
+
+            initial_delay_seconds = 3
+            period_seconds        = 3
+          }
 
         }
         image_pull_secrets {

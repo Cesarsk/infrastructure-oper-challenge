@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: svc-terraform-cluster-role-binding
+subjects:
+- kind: ServiceAccount
+  name: svc-terraform
+  namespace: oper
+roleRef:
+  kind: ClusterRole
+  name: svc-terraform-admin-role
+  apiGroup: rbac.authorization.k8s.io

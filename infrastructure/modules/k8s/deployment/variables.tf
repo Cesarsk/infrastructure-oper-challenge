@@ -7,6 +7,11 @@ variable "registry_server" {
   sensitive = true
 }
 
+variable "registry_email" {
+  type      = string
+  sensitive = true
+}
+
 variable "registry_username" {
   type      = string
   sensitive = true

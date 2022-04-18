@@ -20,8 +20,9 @@ provider "aws" {
 }
 
 provider "kubernetes" {
-  host           = var.cluster_endpoint
-  config_path    = "~/.kube/config"
+  host     = var.cluster_endpoint
+  token    = var.login_token
+  insecure = false
 }
 
 resource "kubernetes_namespace" "oper" {

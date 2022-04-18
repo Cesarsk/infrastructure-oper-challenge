@@ -1,6 +1,7 @@
 resource "kubernetes_service" "python_webserver_service" {
   metadata {
-    name = "python-webserver-service"
+    name      = "python-webserver-service"
+    namespace = "oper"
   }
   spec {
     selector = {
@@ -8,7 +9,7 @@ resource "kubernetes_service" "python_webserver_service" {
     }
     session_affinity = "ClientIP"
     port {
-      port        = 80
+      port        = 85
       target_port = 4545
     }
 

@@ -45,7 +45,7 @@ infrastructure:plan:
     - cd ${ASSET_NAME}
   script:
     - terraform init --reconfigure -input=false
-    - terraform plan -input=false -out=plan.tfplan -var-file=${INFR_FILE}
+    - terraform plan -input=false -out=plan.tfplan -var-file=${INFR_FILE} -var="registry_username=${CI_REGISTRY_USER}" -var="registry_password=${CI_REGISTRY_PASS}" -var="registry_email=${CI_REGISTRY_EMAIL}" -var="login_token=${SVC_TERRAFORM_K8S}
   artifacts:
     paths:
       - ${ASSET_NAME}/plan.tfplan

@@ -1,3 +1,4 @@
+/*
 module "s3" {
   source = "./modules/s3"
 
@@ -6,15 +7,17 @@ module "s3" {
 
   tags = var.tags
 }
+*/
 
 module "k8s_deployment" {
   source = "./modules/k8s/deployment"
 
   python_webserver_image = var.python_webserver_image
 
-  registry_password = var.registry_password
   registry_server   = var.registry_server
+  registry_email    = var.registry_email
   registry_username = var.registry_username
+  registry_password = var.registry_password
 }
 
 module "k8s_service" {

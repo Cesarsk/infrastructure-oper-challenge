@@ -18,10 +18,20 @@ variable "python_webserver_image" {
   type = string
 }
 
+variable "login_token" {
+  type = string
+}
+
 variable "registry_server" {
   type      = string
   sensitive = true
 }
+
+variable "registry_email" {
+  type      = string
+  sensitive = true
+}
+
 variable "registry_username" {
   type      = string
   sensitive = true
